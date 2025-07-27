@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CarbonBlock | The Future of Carbon Markets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- GSAP for Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    html, body { font-family: 'Urbanist', sans-serif; scroll-behavior: smooth; background: #0f172a; color: #f1f5f9;}
+    ::selection { background: #bef264; color: #0f172a;}
+    .glass {background: rgba(30,41,59,0.85); backdrop-filter: blur(14px);}
+    /* Modern neon-glow border for stat card */
+    .stat-card {
+      background: rgba(15,23,42,0.85);
+      border-radius: 1.5rem;
+      border: 2.5px solid #202937;
+      box-shadow: 0 2px 24px 0 rgba(65,255,168,0.06);
+      transition: border-color .3s, box-shadow .3s, transform .25s;
+    }
+    .stat-card:hover {
+      border-color: #a7f3d0;
+      box-shadow: 0 8px 36px 0 #67e8f95e, 0 1.5px 0 #bef26488 inset;
+      transform: translateY(-3px) scale(1.022);
+    }
+    .border-gradient {
+      border-image: linear-gradient(90deg, #bef264, #5eead4, #38bdf8) 1;
+    }
+    .section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 1.5rem;
+      scroll-snap-align: start;
+    }
+    .blockchain-step {
+      background: rgba(30,41,59,0.82);
+      border: 2.5px solid #5eead4;
+      border-radius: 1.25rem;
+      padding: 1.6rem 1.2rem;
+      margin: 0.65rem 0;
+      box-shadow: 0 4px 18px rgba(16, 185, 129, 0.07);
+      transition: transform .23s, box-shadow .23s, border-color .23s;
+    }
+    .blockchain-step:hover {
+      transform: scale(1.03) translateY(-5px);
+      box-shadow: 0 14px 44px rgba(56,189,248,0.14);
+      border-color: #38bdf8;
+    }
+    .qr-mock {border: 2px solid #38bdf8; border-radius: 1rem;}
+    @media (max-width: 640px) {
+      .stat-card { min-width: 90vw !important; max-width: 96vw;}
+      .section { padding-left: 0.25rem; padding-right: 0.25rem; }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-tr from-slate-900 via-slate-800 to-slate-900 text-zinc-100 overflow-x-hidden scroll-smooth">
+  <!-- Section 1: Who We Are -->
+  <section class="section relative flex flex-col justify-center items-center" id="page1">
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+      <div class="absolute top-32 left-10 w-64 h-64 bg-gradient-to-br from-emerald-400/30 to-sky-400/15 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-8 w-48 h-48 bg-gradient-to-br from-lime-400/40 to-sky-300/0 rounded-full blur-2xl"></div>
+    </div>
+    <div class="z-10 flex flex-col items-center text-center space-y-8 max-w-2xl">
+      <span class="text-2xl font-black tracking-wider text-lime-300">CARBONBLOCK</span>
+      <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight text-slate-50 drop-shadow-lg">
+        Powering the Next Generation of Carbon Markets
+      </h1>
+      <p class="text-xl max-w-xl mx-auto text-slate-300">
+        Buy, retire, and fractionalize real carbon credits.<br>
+        <span class="text-cyan-300 font-bold">Blockchain-powered.</span> Verified. Transparent.<br>
+        Empowering Indian startups and companies to take <span class="text-lime-300">real, provable climate action</span>.
+      </p>
+      <div class="glass rounded-2xl px-8 py-7 mt-2 shadow-lg border-gradient border-4 hover:scale-105 transition-all duration-500">
+        <div class="flex flex-wrap justify-center items-center gap-4">
+          <div class="text-left">
+            <h3 class="font-semibold text-lime-400 text-xl mb-2">What We Do</h3>
+            <ul class="list-disc pl-5 text-slate-100 text-lg space-y-1">
+              <li>Buy authentic, government-approved carbon credits.</li>
+              <li>Retire (destroy) credits <b>on-chain</b> for radical transparency.</li>
+              <li>Mint and sell microcredits (0.1 ton each) to startups and SMEs.</li>
+              <li>Offer microcredits for direct purchase or ESG impact loans.</li>
+              <li>All credits verified and tracked on the Polygon blockchain.</li>
+            </ul>
+          </div>
+        </div>
+        <a href="#page2" class="inline-block mt-8 px-7 py-3 bg-gradient-to-r from-lime-300 to-cyan-300 text-slate-900 font-bold rounded-xl shadow-xl hover:from-cyan-300 hover:to-lime-300 hover:scale-105 transition-all duration-300">See Why Now</a>
+      </div>
+    </div>
+  </section>
+  <!-- Section 2: Indian Market Stats -->
+  <section class="section flex flex-col items-center justify-center bg-gradient-to-b from-transparent to-slate-950" id="page2">
+    <div class="text-center mb-9 z-10">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-lime-300 via-emerald-400 to-cyan-300">Why India? Why Now?</h2>
+      <p class="text-xl max-w-xl mx-auto text-slate-300">India’s carbon market is on the brink of a revolution. Here’s why it’s a once-in-a-generation opportunity—</p>
+    </div>
+    <div class="flex flex-wrap md:grid md:grid-cols-3 gap-7 justify-center max-w-6xl z-10 w-full">
+      <div class="stat-card p-7 w-full min-w-[290px] max-w-xs flex-1 group">
+        <div class="text-5xl font-bold text-emerald-300 mb-2 group-hover:text-lime-300 transition">2026</div>
+        <div class="text-lg font-semibold text-lime-200 mb-1">Carbon Market Launch</div>
+        <p class="text-slate-300 text-base">Govt-mandated carbon trading starts for 8+ core sectors (steel, cement, power...)</p>
+      </div>
+      <div class="stat-card p-7 w-full min-w-[290px] max-w-xs flex-1 group">
+        <div class="text-5xl font-bold text-cyan-300 mb-2 group-hover:text-lime-300 transition">60%</div>
+        <div class="text-lg font-semibold text-cyan-200 mb-1">Indians Prefer Green</div>
+        <p class="text-slate-300 text-base">60%+ Indian consumers say they seek out climate-positive brands & products.</p>
+      </div>
+      <div class="stat-card p-7 w-full min-w-[290px] max-w-xs flex-1 group">
+        <div class="text-5xl font-bold text-lime-300 mb-2 group-hover:text-cyan-300 transition">₹500-₹1000</div>
+        <div class="text-lg font-semibold text-lime-200 mb-1">Credit Price / Ton</div>
+        <p class="text-slate-300 text-base">Currently much lower than global prices — huge upside as India raises climate targets.</p>
+      </div>
+      <div class="stat-card p-7 w-full min-w-[290px] max-w-xs flex-1 group">
+        <div class="text-5xl font-bold text-emerald-200 mb-2 group-hover:text-cyan-300 transition">80%</div>
+        <div class="text-lg font-semibold text-emerald-200 mb-1">Urban Climate Impact</div>
+        <p class="text-slate-300 text-base">80%+ urban Indians say sustainability shapes their purchase decisions.</p>
+      </div>
+      <div class="stat-card p-7 w-full min-w-[290px] max-w-xs flex-1 group">
+        <div class="text-4xl font-bold text-cyan-200 mb-2 group-hover:text-lime-300 transition">10M+</div>
+        <div class="text-lg font-semibold text-cyan-200 mb-1">Microcredits Issued</div>
+        <p class="text-slate-300 text-base">Global proof: 10M+ microcredits issued, 14M+ families benefited worldwide.</p>
+      </div>
+    </div>
+    <div class="mt-14 flex flex-col items-center z-10">
+      <p class="text-lg text-slate-400 mb-2">CarbonBlock brings global best practices to India.<br><span class="font-semibold text-lime-300">Numbers don’t lie—real climate action, real opportunity.</span></p>
+      <a href="#page3" class="inline-block mt-2 px-7 py-3 bg-gradient-to-r from-cyan-300 to-lime-300 text-slate-900 font-bold rounded-xl shadow-xl hover:from-lime-300 hover:to-cyan-300 hover:scale-105 transition-all duration-300">How Blockchain Works</a>
+    </div>
+  </section>
+  <!-- Section 3: Blockchain & How It Works -->
+  <section class="section flex flex-col items-center justify-center" id="page3">
+    <div class="text-center z-10">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-5 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-lime-300 to-emerald-300">Blockchain Transparency: The CarbonBlock Advantage</h2>
+      <p class="text-xl text-slate-300 max-w-2xl mx-auto mb-7">
+        Every credit we retire, every microcredit we issue—permanently recorded on the <span class="text-cyan-300 font-bold">Polygon blockchain</span>.<br>
+        No greenwashing. Just <span class="text-lime-300">provable, auditable impact</span>.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 max-w-5xl items-center z-10">
+      <div>
+        <div class="blockchain-step shadow-xl">
+          <div class="flex items-center mb-2">
+            <span class="w-5 h-5 mr-2 bg-gradient-to-tr from-lime-300 to-cyan-300 rounded-full animate-pulse"></span>
+            <span class="font-semibold text-xl text-lime-300">Buy Verified Credits</span>
+          </div>
+          <p class="text-slate-200">We purchase government-approved carbon credits from India’s market.</p>
+        </div>
+        <div class="blockchain-step shadow-xl">
+          <div class="flex items-center mb-2">
+            <span class="w-5 h-5 mr-2 bg-gradient-to-tr from-cyan-300 to-emerald-400 rounded-full animate-pulse"></span>
+            <span class="font-semibold text-xl text-cyan-300">Retire On-Chain</span>
+          </div>
+          <p class="text-slate-200">We destroy each credit publicly and immutably on Polygon—<b>auditable forever</b>.</p>
+        </div>
+        <div class="blockchain-step shadow-xl">
+          <div class="flex items-center mb-2">
+            <span class="w-5 h-5 mr-2 bg-gradient-to-tr from-emerald-300 to-lime-300 rounded-full animate-pulse"></span>
+            <span class="font-semibold text-xl text-emerald-300">Mint Microcredits</span>
+          </div>
+          <p class="text-slate-200">Retired credits are split into 0.1 ton microcredits—NFTs on Polygon, each linked to its parent certificate.</p>
+        </div>
+        <div class="blockchain-step shadow-xl">
+          <div class="flex items-center mb-2">
+            <span class="w-5 h-5 mr-2 bg-gradient-to-tr from-lime-300 to-emerald-300 rounded-full animate-pulse"></span>
+            <span class="font-semibold text-xl text-lime-200">Distribute & Verify</span>
+          </div>
+          <p class="text-slate-200">Startups and SMEs can buy or borrow microcredits.<br>
+            <b>Anyone can scan a QR code and instantly verify the on-chain certificate.</b>
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-col items-center md:items-end mt-7 md:mt-0">
+        <div class="glass px-6 py-8 rounded-2xl shadow-2xl w-full max-w-xs relative flex flex-col items-center">
+          <span class="block text-lg text-lime-300 mb-2 font-semibold">🔗 Try it live</span>
+          <div class="qr-mock bg-slate-900 p-4 flex flex-col items-center mb-2">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://polygonscan.com/token/0x12345" alt="QR for Polygon microcredit" class="w-28 h-28" />
+            <span class="text-xs text-slate-400 mt-2">Scan to view a sample microcredit on-chain</span>
+          </div>
+          <span class="text-sm text-cyan-300 text-center">Every microcredit comes with a QR code.<br> Anyone can verify your impact—instantly, on Polygon.</span>
+        </div>
+        <div class="mt-8 text-left text-slate-400 text-sm max-w-sm">
+          <b>Why Polygon?</b> Blazing fast, eco-friendly, ultra-low fees.<br>
+          Unlike older blockchains, <span class="text-cyan-300 font-semibold">Polygon</span> is Proof-of-Stake and carbon-neutral—<span class="text-emerald-300">99.9% less energy</span> than Ethereum or Bitcoin.
+        </div>
+      </div>
+    </div>
+    <div class="mt-10 flex flex-col items-center z-10">
+      <a href="#page1" class="inline-block mt-2 px-7 py-3 bg-gradient-to-r from-lime-300 to-cyan-300 text-slate-900 font-bold rounded-xl shadow-xl hover:from-cyan-300 hover:to-lime-300 hover:scale-105 transition-all duration-300">Back to Top</a>
+      <div class="mt-5 text-xs text-slate-500">© 2024 CarbonBlock. All rights reserved.</div>
+    </div>
+  </section>
+
+  <!-- JS: Page Animations -->
+  <script>
+    // Fade-in animations on load for each viewport
+    gsap.from("#page1 .z-10", { y: 100, opacity: 0, duration: 1.1, ease: "power3.out" });
+    gsap.from("#page2 .stat-card", {
+      scrollTrigger: "#page2",
+      opacity: 0,
+      y: 60,
+      stagger: 0.14,
+      duration: 1.2,
+      ease: "power3.out"
+    });
+    gsap.from("#page3 .blockchain-step", {
+      scrollTrigger: "#page3",
+      x: -50,
+      opacity: 0,
+      stagger: 0.15,
+      duration: 0.8,
+      ease: "power2.out"
+    });
+    gsap.from("#page3 .glass", {
+      scrollTrigger: "#page3",
+      y: 40,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out"
+    });
+    // Fancy hover for stat cards
+    document.querySelectorAll('.stat-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, { scale: 1.035, boxShadow: "0 10px 44px #67e8f988", duration: 0.25 });
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, { scale: 1, boxShadow: "0 2px 24px #22d3ee19", duration: 0.22 });
+      });
+    });
+    // Smooth scroll for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && document.querySelector(href)) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
